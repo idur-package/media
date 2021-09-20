@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+import os
+import sys
+from sys import exit
+
+if len(sys.argv) > 1:
+	execute=""
+	for i in range(len(sys.argv)):
+		if i != 0:
+			execute += sys.argv[i] + " "
+	if sys.argv[1] == "-l":
+		os.system("""
+			cd /opt/jre1.8.0_301/bin/
+			ls
+		""")
+	elif sys.argv[1] == "-r":
+		if len(sys.argv) > 2:
+			os.system("""
+				cd /opt/jre1.8.0_301/bin/
+				./java -jar """ + sys.argv[2] + """
+			""")
+		else:
+			print("openjdk-17 -r <path>")
+	else:
+		os.system("""
+			cd /opt/jre1.8.0_301/bin/
+			./""" + execute + """
+		""")
+else:
+	print("""jre-8u301
+Use:
+	jre-8u301 <jdk-command>    execute jre command
+	jre-8u301 -l               see execute commands
+	jre-8u301 -r               execute simple .jar""")
