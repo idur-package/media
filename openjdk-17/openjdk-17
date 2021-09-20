@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+import os
+import sys
+from sys import exit
+
+if len(sys.argv) > 1:
+	execute=""
+	for i in range(len(sys.argv)):
+		if i != 0:
+			execute += sys.argv[i] + " "
+	if sys.argv[1] == "-l":
+		os.system("""
+			cd /opt/openjdk-17/bin/
+			ls
+		""")
+	elif sys.argv[1] == "-r":
+		if len(sys.argv) > 2:
+			os.system("""
+				cd /opt/openjdk-17/bin/
+				./java -jar """ + sys.argv[2] + """
+			""")
+		else:
+			print("openjdk-17 -r <path>")
+	else:
+		os.system("""
+			cd /opt/openjdk-17/bin/
+			./""" + execute + """
+		""")
+else:
+	print("""openjdk-17
+Use:
+	openjdk-17 <jdk-command>    execute jdk command
+	openjdk-17 -l               see execute commands
+	openjdk-17 -r               execute simple .jar""")
