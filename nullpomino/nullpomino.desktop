@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Nullpomino
 Exec=nullpomino
-Icon=nullpomino
+Icon=/opt/nullpomino/nullpomino.png
 Type=Application
 Categories=Game
