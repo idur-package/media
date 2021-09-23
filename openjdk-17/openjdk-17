@@ -9,14 +9,14 @@ if len(sys.argv) > 1:
 		if i != 0:
 			execute += sys.argv[i] + " "
 	if sys.argv[1] == "-l":
-		os.system("ls /opt/openjdk-17/bin/")
+		os.system("ls /opt/idur/share/program/openjdk-17/bin/")
 	elif sys.argv[1] == "-r":
 		if len(sys.argv) > 2:
-			os.system("/opt/openjdk-17/bin/java -jar " + sys.argv[2])
+			os.system("/opt/idur/share/program/openjdk-17/bin/java -jar " + sys.argv[2])
 		else:
 			print("openjdk-17 -r <path>")
 	else:
-		os.system("/opt/openjdk-17/bin/" + execute)
+		os.system("/opt/idur/share/program/openjdk-17/bin/" + execute)
 else:
 	print("""openjdk-17
 Use:
